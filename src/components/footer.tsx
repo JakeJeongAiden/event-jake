@@ -14,7 +14,7 @@ const routes = [
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-between h-16 border-t border-white/10 px-3 sm:px-9 text-xs text-white/25 mt-auto mb-1">
+    <footer className="flex items-center justify-between h-12 bg-gray-950/20 border-t border-white/10 px-3 sm:px-9 text-xs text-white/25 mt-auto">
       <small className="text-xs">
         &copy; {new Date().getFullYear()} Created by Jake J. All rights
         reserved.

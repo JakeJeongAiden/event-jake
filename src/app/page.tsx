@@ -1,4 +1,7 @@
+import SearchForm from "@/components/search-form";
 import Link from "next/link";
+import React from "react";
+import H1 from "@/components/h1";
 
 export default function Home() {
   return (
@@ -6,25 +9,17 @@ export default function Home() {
       //flex-col to center vertically. px-3 to give padding on both side horizontally when screen gets smaller.
       className="flex flex-col items-center pt-36 px-3"
     >
-      <h1 className="text-3xl font-bold tracking-tight">
-        Search for events around you!
-      </h1>
+      <H1>Search for events around you!</H1>
+
       <p className="mb-12 mt-7 text-2xl lg:text-3xl opacity-75">
         Browse more than{" "}
-        <span className="font-bold italic underline text-accent">
+        <span className="font-bold italic underline text-accent drop-shadow-md">
           10,000 events
         </span>{" "}
         around you
       </p>
 
-      <form className="w-full sm:w-[580px] ">
-        <input
-          //ring is the outline color when focused. It should indicate user that they are focused on the input field.
-          className="w-full h-16 rounded-lg bg-white/[7%] px-6 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/10"
-          placeholder="Search events in any city..."
-          spellCheck={false}
-        />
-      </form>
+      <SearchForm />
 
       <section className="mt-4 flex gap-x-4 text-sm text-white/50">
         <p>Popular:</p>
@@ -44,11 +39,18 @@ export default function Home() {
   /* === NOTES ===
 
 ## WEB DESIGN PRINCIPLES
-1. tracking-tight tightens the spacing between letters. 
-2. H1 should be tightened & bolded.
+1. H1 should be tightened & bolded with `tracking-tight` and `font-bold` respectively.
+
+## FORM
+1. add onSubmit to form tag to prevent default behavior of refreshing the page when submitted.
+
 
 KEYWORDS: accent color, 
 
+## CLIENT SIDE RENDERING VS SERVER SIDE RENDERING
+1. We don't want to add 'use client' on page.tsx because a lot of other things will be affected by it.
+2. You may want to consider extracting the component to a separate file and use client side rendering there.
+3. In this project, Form has been extracted to a separate file and use client side rendering there.
 
 */
 }
