@@ -21,7 +21,7 @@ export default function SearchForm() {
     <form onSubmit={handleSubmit} className="w-full sm:w-[580px] ">
       <input
         //ring is the outline color when focused. It should indicate user that they are focused on the input field.
-        className="w-full h-16 rounded-lg bg-gray-100/[50%] px-6 border border-white/20 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/80 placeholder:text-gray-900/80"
+        className="w-full h-16 rounded-lg bg-gray-100/[50%] px-6 border border-white/20 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/80 placeholder:text-gray-900/30 text-gray-600"
         placeholder="Search events in any city..."
         value={searchText} // controlled input
         onChange={(e) => setSearchText(e.target.value)} // detect input change and update the state causing re-render.

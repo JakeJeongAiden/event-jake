@@ -7,7 +7,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function capitalize(string: string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string
+    .split("%20")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 export function sleep(ms: number) {
