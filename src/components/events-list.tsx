@@ -2,6 +2,7 @@ import React from "react";
 import EventCard from "./event-card";
 import { getEvents } from "@/lib/server-utils";
 import PaginationControls from "./pagination-controls";
+import NoEventsResult from "@/components/no-events-results";
 
 type EventsListProps = {
   city: string;
@@ -18,6 +19,8 @@ export default async function EventsList({ city, page = 1 }: EventsListProps) {
 
   return (
     <section className="max-w-[1300px] flex flex-wrap gap-10 justify-center px-[20px]">
+      {events.length === 0 ? <NoEventsResult /> : ""}
+
       {events.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}

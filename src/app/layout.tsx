@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Container from "@/components/container";
+import AppBackground from "@/components/app-background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         // defining class here allows text color to be inherited to children.
-        className={`${inter.className} bg-stone-950/10 text-white`}
+        className={`${inter.className} bg-stone-950/10 text-white relative`}
       >
         {/* Sandwich header and footer components around children which is page */}
+        <AppBackground />
         <Container>
           <Header />
           {children}
